@@ -8,10 +8,12 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class Funcionario {
 
+
+
     @Id
     private Integer id;
     private String nome;
-    private Float salario;
+    private Integer salario;
     
     @ManyToOne
     @JoinColumn(name = "lotacao_id")
@@ -33,11 +35,11 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public Float getSalario() {
+    public Integer getSalario() {
         return salario;
     }
 
-    public void setSalario(Float salario) {
+    public void setSalario(Integer salario) {
         this.salario = salario;
     }
 
@@ -49,11 +51,19 @@ public class Funcionario {
         this.lotacao = lotacao;
     }
 
-    public Funcionario(Integer id, String nome, Float salario, Lotacao lotacao) {
+    public Funcionario(Integer id, String nome, Integer salario, Lotacao lotacao) {
         this.id = id;
         this.nome = nome;
         this.salario = salario;
         this.lotacao = lotacao;
+    }
+
+        public Funcionario() {
+    }
+
+        @Override
+    public String toString() {
+        return "Funcionario [id=" + id + ", nome=" + nome + ", salario=" + salario + ", lotacao=" + lotacao + "]";
     }
 }
     

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import br.gov.teste.prova.entity.Lotacao;
@@ -14,19 +13,22 @@ import br.gov.teste.prova.repository.LotacaoRepository;
 public class LotacaoService {
 
     @Autowired
-    private LotacaoRepository lotacaoRepository;
+    LotacaoRepository lotacaoRepository;
 
-    private void populaLotacao(List<Lotacao> lotacaos) {
+
+    public void populaLotacao(List<Lotacao> lotacaos) {
 
         for (Lotacao lotacao : lotacaos) {
-            Lotacao newFuncionario = lotacaoRepository.save(lotacao);
-
+            Lotacao newLotacao = lotacaoRepository.save(lotacao);
+            System.out.println(newLotacao);
         }
 
     }
 
-    private List<Lotacao> listaFuncionarios(Pageable pageable) {
+    public List<Lotacao> listaLotacao(Pageable pageable) {
         return lotacaoRepository.findAll();
     }
-
+    public void getLotacaoMaiorSalario(){
+        
+    }
 }
