@@ -1,5 +1,6 @@
 package br.gov.teste.prova.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -8,15 +9,19 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class Funcionario {
 
-
-
     @Id
+    @Column
     private Integer id;
+
+    @Column
     private String nome;
+
+    @Column
     private Integer salario;
-    
+
     @ManyToOne
-    @JoinColumn(name = "lotacao_id")
+    @Column
+    @JoinColumn(name = "lotacaoId")
     private Lotacao lotacao;
 
     public Integer getId() {
@@ -58,12 +63,11 @@ public class Funcionario {
         this.lotacao = lotacao;
     }
 
-        public Funcionario() {
+    public Funcionario() {
     }
 
-        @Override
+    @Override
     public String toString() {
         return "Funcionario [id=" + id + ", nome=" + nome + ", salario=" + salario + ", lotacao=" + lotacao + "]";
     }
 }
-    
