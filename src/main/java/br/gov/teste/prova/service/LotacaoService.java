@@ -15,20 +15,11 @@ public class LotacaoService {
     @Autowired
     LotacaoRepository lotacaoRepository;
 
-
-    public void populaLotacao(List<Lotacao> lotacaos) {
-
-        for (Lotacao lotacao : lotacaos) {
-            Lotacao newLotacao = lotacaoRepository.save(lotacao);
-            System.out.println(newLotacao);
-        }
-
-    }
-
     public List<Lotacao> listaLotacao(Pageable pageable) {
         return lotacaoRepository.findAll();
     }
-    public void getLotacaoMaiorSalario(){
-        
+
+    public Object getLotacaoMaiorSalario() {
+        return lotacaoRepository.findLotacaoComMaiorSalarioTotal();
     }
 }

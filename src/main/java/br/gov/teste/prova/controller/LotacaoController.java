@@ -18,9 +18,11 @@ public class LotacaoController {
     @Autowired
     LotacaoService lotacaoService;
 
-    @GetMapping("/getAll")
+    @GetMapping("/getMaiorSalario")
     public ResponseEntity<?> listaLotacaoMaiorSalario() {
         System.out.println("chamando listar salario maior lotacação");
-        return null;
+        Object object = lotacaoService.getLotacaoMaiorSalario();
+        return ResponseEntity.ok().body(object);
     }
+
 }
