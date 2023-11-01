@@ -1,8 +1,11 @@
+create table lotacao (id integer not null, nomeLotacao varchar(255), primary key (id));
+create table funcionario (id integer not null, nome varchar(255), salario integer, lotacao_id integer, primary key (id));
+create table lotacao_funcionarios (lotacao_id integer not null, funcionarios_id integer not null);
 
- INSERT INTO LOTACAO  VALUES (1, 'LotacaoA');
- INSERT INTO LOTACAO  VALUES (2, 'LotacaoB');
- INSERT INTO LOTACAO  VALUES (3, 'LotacaoC');
- INSERT INTO LOTACAO  VALUES (4, 'LotacaoD');
+ INSERT INTO LOTACAO VALUES (1, 'LotacaoA');
+ INSERT INTO LOTACAO VALUES (2, 'LotacaoB');
+ INSERT INTO LOTACAO VALUES (3, 'LotacaoC');
+ INSERT INTO LOTACAO VALUES (4, 'LotacaoD');
 
 
  INSERT INTO FUNCIONARIO VALUES (1, 'Funcionario1', 5000, 1);

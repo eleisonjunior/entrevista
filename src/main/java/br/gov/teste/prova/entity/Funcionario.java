@@ -1,6 +1,6 @@
 package br.gov.teste.prova.entity;
 
-import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -10,17 +10,13 @@ import jakarta.persistence.ManyToOne;
 public class Funcionario {
 
     @Id
-    @Column
     private Integer id;
 
-    @Column
     private String nome;
 
-    @Column
     private Integer salario;
 
     @ManyToOne
-    @Column
     @JoinColumn(name = "lotacaoId")
     private Lotacao lotacao;
 

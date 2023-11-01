@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gov.teste.prova.service.FuncionarioService;
-import br.gov.teste.prova.service.LerDadosCsv;
 import br.gov.teste.prova.service.LotacaoService;
 
 @RestController
@@ -19,22 +17,6 @@ public class LotacaoController {
 
     @Autowired
     LotacaoService lotacaoService;
-
-    @Autowired
-    LerDadosCsv lerDadosCsv;
-
-    @PostMapping("/populaBase")
-    public void populaAmbasBases() {
-        try {
-            System.out.println("chamando metodos popula base");
-            lerDadosCsv.insereLotacao();
-            lerDadosCsv.insereFuncionario();
-        } catch (Exception e) {
-            // TODO: handle exception
-
-        }
-
-    }
 
     @GetMapping("/getAll")
     public ResponseEntity<?> listaLotacaoMaiorSalario() {

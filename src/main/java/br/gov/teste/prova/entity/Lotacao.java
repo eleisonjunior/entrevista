@@ -2,7 +2,6 @@ package br.gov.teste.prova.entity;
 
 import java.util.List;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -11,10 +10,9 @@ import jakarta.persistence.OneToMany;
 public class Lotacao {
 
     @Id
-    @Column
     private Integer id;
 
-    @Column
+
     private String nomeLotacao;
 
     @OneToMany
