@@ -29,4 +29,4 @@ entries.(())
 
 Remember that you may receive some invalid input: null,empty maps, and so on. Handle it all appropriately
 and return an empty map/
-You may use Java 8 Streams API to implement your solution.
+You may use Java 17 Streams API to implement your solution.
